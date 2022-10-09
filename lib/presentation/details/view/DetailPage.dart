@@ -37,7 +37,6 @@ class DetailPage extends StatelessWidget {
           ],
         ),
         bottomNavigationBar: Container(
-          height: Get.height * 0.165,
           decoration: const BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.all(Radius.circular(0)),
@@ -50,6 +49,7 @@ class DetailPage extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 17),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Row(
                 children: [
