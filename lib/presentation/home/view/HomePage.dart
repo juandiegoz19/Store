@@ -42,9 +42,32 @@ class HomePage extends StatelessWidget {
           title: Image.network(
             'https://s22.q4cdn.com/351912490/files/design/Logo-Falabella-Marca_.png',
             width: Get.width * 0.7,
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.fitHeight,
           ),
         ),
+        bottomNavigationBar: Obx(() => BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              currentIndex: _homeViewModel.currentIndex.value,
+              enableFeedback: false,
+              showUnselectedLabels: false,
+              elevation: 0,
+              backgroundColor: Colors.white,
+              showSelectedLabels: false,
+              iconSize: 30,
+              unselectedItemColor: Colors.grey.shade500,
+              selectedItemColor: Colors.black,
+              onTap: (value) => _homeViewModel.changeHome(value),
+              items: const [
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.home_rounded), label: ''),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.search_rounded), label: ''),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.favorite_border_rounded), label: ''),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.person_rounded), label: ''),
+              ],
+            )),
         backgroundColor: Colors.white,
         body: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),

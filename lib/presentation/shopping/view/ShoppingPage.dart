@@ -149,7 +149,7 @@ class ShoppingPage extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text('\$${products.price * products.amount!}',
+                            Text('\$${(products.price * products.amount!).toStringAsFixed(2)}',
                                 style: TextStyle(
                                     fontSize: Get.textScaleFactor * 15)),
                             Expanded(

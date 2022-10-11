@@ -8,6 +8,7 @@ import 'package:store/presentation/shopping/view_model/shopping_vm.dart';
 class HomeViewModel {
   HomeService homeService;
   RxList<String> listCategory = RxList();
+  RxInt currentIndex = 0.obs;
   ShoppingViewModel shoppingViewModel = Get.put(ShoppingViewModel());
 
   HomeViewModel(this.homeService) {
@@ -28,5 +29,9 @@ class HomeViewModel {
 
   void shoppingCar(){
     Get.to(() => ShoppingPage());
+  }
+
+  changeHome(value) {
+    currentIndex.value = value;
   }
 }
