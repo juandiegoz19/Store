@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:store/presentation/home/view/HomePage.dart';
+import 'package:store/presentation/main/view/MainPage.dart';
 import 'package:store/presentation/shopping/view_model/shopping_vm.dart';
 import 'package:store/presentation/utils/theme/palette.dart';
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       themeMode: ThemeMode.light, 
-      home: HomePage(),
+      home: MainPage(),
       debugShowCheckedModeBanner: false,
       
       onInit: () {
