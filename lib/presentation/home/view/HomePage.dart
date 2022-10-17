@@ -1,8 +1,7 @@
-import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:get/get.dart';
-import 'package:store/domain/home/model/products.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:store/domain/home/service/home_service.dart';
 import 'package:store/infrestructure/home/repository/home_repository.dart';
 import 'package:store/presentation/home/view_model/home_vm.dart';
@@ -18,6 +17,8 @@ class HomePage extends StatelessWidget {
     return Column(
       children: [
         BannerCarousel(
+          spaceBetween: 5,
+          disableColor: Colors.orange.shade900,
             animation: false,
             indicatorBottom: false,
             borderRadius: 10,
@@ -42,27 +43,105 @@ class HomePage extends StatelessWidget {
         Container(
           margin: const EdgeInsets.only(top: 30, bottom: 20),
           height: 55,
-          child: Obx((() => ListView.builder(
-                itemBuilder: (context, index) {
-                  String category = _homeViewModel.listCategory[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
-                            side:
-                                const BorderSide(color: Colors.grey, width: 2),
-                          )),
-                      child: Text(category),
-                    ),
-                  );
-                },
-                itemCount: _homeViewModel.listCategory.length,
-                scrollDirection: Axis.horizontal,
-              ))),
+          child: Obx(() => _homeViewModel.listCategory.isEmpty
+              ? Shimmer.fromColors(
+                  enabled: _homeViewModel.listCategory.isEmpty,
+                  baseColor: Colors.grey.shade100,
+                  highlightColor: Colors.grey.shade300,
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: const BorderSide(
+                                    color: Colors.grey, width: 2),
+                              )),
+                          child: const Text('category'),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: const BorderSide(
+                                    color: Colors.grey, width: 2),
+                              )),
+                          child: const Text('category'),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: const BorderSide(
+                                    color: Colors.grey, width: 2),
+                              )),
+                          child: const Text('category'),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              padding: const EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: const BorderSide(
+                                    color: Colors.grey, width: 2),
+                              )),
+                          child: const Text('category'),
+                        ),
+                      )
+                    ],
+                  ))
+              : ListView.builder(
+                  itemBuilder: (context, index) {
+                    String category = _homeViewModel.listCategory[index];
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Obx(
+                        () => ElevatedButton(
+                          onPressed: () =>
+                              _homeViewModel.categoryProduct(category, index),
+                          style: ElevatedButton.styleFrom(
+                              onPrimary:
+                                  _homeViewModel.categorySelect.value == index
+                                      ? Colors.white
+                                      : Colors.black,
+                              primary:
+                                  _homeViewModel.categorySelect.value == index
+                                      ? Colors.black
+                                      : Colors.white,
+                              padding: const EdgeInsets.all(10),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                                side: BorderSide(
+                                    color: _homeViewModel.categorySelect.value == index
+                                      ? Colors.black
+                                      : Colors.grey, width: 2),
+                              )),
+                          child: Text(category),
+                        ),
+                      ),
+                    );
+                  },
+                  itemCount: _homeViewModel.listCategory.length,
+                  scrollDirection: Axis.horizontal,
+                )),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -72,25 +151,26 @@ class HomePage extends StatelessWidget {
               'New Arrival',
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
             ),
-            Text(
-              'See all',
-              style: TextStyle(fontSize: 15),
+            InkWell(
+              child: Text(
+                'See all',
+                style: TextStyle(fontSize: 15),
+              ),
             )
           ],
         ),
         Expanded(
-          child: FutureBuilder(
-            future: _homeViewModel.products(),
-            builder: (context, AsyncSnapshot<List<Products>> snapshot) {
-              Widget widget = const Center(child: CircularProgressIndicator(color: Colors.black,));
-
-              if (snapshot.hasData) {
-                
-                widget = GridViewProducts(listProduct:  snapshot.data!.asMap());
-              }
-              return widget;
-            },
-          ),
+          child: Obx(() => _homeViewModel.listProducts.isEmpty
+              ? Shimmer.fromColors(
+                  enabled: _homeViewModel.listProducts.isEmpty,
+                  baseColor: Colors.grey.shade100,
+                  highlightColor: Colors.grey.shade300,
+                  child: GridViewProducts(
+                    listProduct: const {},
+                    loader: true,
+                  ))
+              : GridViewProducts(
+                  listProduct: _homeViewModel.listProducts.asMap())),
         )
       ],
     );

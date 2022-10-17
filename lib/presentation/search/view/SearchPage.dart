@@ -16,6 +16,8 @@ class SearchPage extends StatelessWidget {
     return Column(
       children: [
         TextField(
+          onSubmitted: (value) => _searchViewModel.searchProduct(value),
+          textInputAction: TextInputAction.search,
           controller: _searchViewModel.controllerSearch,
           onChanged: (value) {},
           cursorColor: Colors.black,
@@ -34,7 +36,12 @@ class SearchPage extends StatelessWidget {
         const SizedBox(height: 10),
         Expanded(
             child: Obx(() => _searchViewModel.searchProducts.isEmpty
-                ? const Center(child: CircularProgressIndicator(color: Colors.black,))
+                ? Center(
+                    child: _searchViewModel.search.value.contains('1')
+                        ? const CircularProgressIndicator(
+                            color: Colors.black,
+                          )
+                        : Text(_searchViewModel.search.value))
                 : GridViewProducts(
                     listProduct: _searchViewModel.searchProducts)))
       ],

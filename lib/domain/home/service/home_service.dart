@@ -13,4 +13,8 @@ class HomeService {
   Future<List<Products>> listProducts() async {
     return await iHomeRepository.listProducts();
   }
+
+  Future<List<Products>> listCategoryProducts(category) async {
+    return await iHomeRepository.listCategoryProducts(category);
+  }
 }

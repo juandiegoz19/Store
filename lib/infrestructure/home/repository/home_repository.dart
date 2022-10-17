@@ -15,24 +15,48 @@ class HomeRepository extends IHomeRepository {
 
     BaseApiService apiService = NetworkApiService();
 
-    Either<NetworkException, dynamic>  response = await apiService.getResponse(url);
-    
+    Either<NetworkException, dynamic> response =
+        await apiService.getResponse(url);
+
     categories = categoryFromJson(response.right);
-    
+    categories.insert(0, 'all');
     return categories;
   }
 
   @override
-  Future<List<Products>> listProducts() async{
+  Future<List<Products>> listProducts() async {
     List<Products> products;
     String url = '${Apis.sync}products';
 
     BaseApiService apiService = NetworkApiService();
 
-    Either<NetworkException, dynamic>  response = await apiService.getResponse(url);
-    
+    Either<NetworkException, dynamic> response =
+        await apiService.getResponse(url);
+
     products = productsFromJson(response.right);
-    
+
+    return products;
+  }
+
+  @override
+  Future<List<Products>> listCategoryProducts(category) async {
+    List<Products> products;
+    String url = '${Apis.sync}products';
+
+    BaseApiService apiService = NetworkApiService();
+
+    Either<NetworkException, dynamic> response =
+        await apiService.getResponse(url);
+
+    products = productsFromJson(response.right);
+
+    if (category != 'all') {
+      products = products
+          .where((element) =>
+              element.category.toLowerCase() == category.toLowerCase())
+          .toList();
+    }
+
     return products;
   }
 }

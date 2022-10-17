@@ -10,8 +10,7 @@ class FavoritePage extends StatelessWidget {
   final FavoriteViewModel _favoriteViewModel = FavoriteViewModel();
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => GridViewProducts(listProduct: _favoriteViewModel.shoppingViewModel.likeProducts.value)
-    );
+    return Obx(() => GridViewProducts(
+        listProduct: _favoriteViewModel.shoppingViewModel.likeProducts.value));
   }
 }
