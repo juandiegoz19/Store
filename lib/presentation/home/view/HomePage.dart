@@ -23,6 +23,7 @@ class HomePage extends StatelessWidget {
             indicatorBottom: false,
             borderRadius: 10,
             margin: const EdgeInsets.all(0),
+            height: Get.size.height * 0.2,
             width: Get.size.width,
             customizedIndicators: const IndicatorModel.animation(
                 width: 8, height: 8, spaceBetween: 2, widthAnimation: 50),

@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		oG5/OGn+vw7vp/nu5DUDoZJ4nFc=
+		80ZT0BHn/BKK0hCq0GFoKvy5ocw=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		Kov9MEAWbqWIjqvovEA0DThNrAA=
+		Tr1uJXSPcayvTxtwaFFYvkYNmbo=
 		</data>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -30,11 +30,27 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		ZSx7MJ+vQiR9o5VUvIesMGGi/8w=
+		4Ma/VfqG9jfn6jEnAczQBHU+msg=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		P7bb/oR3EhwqCIH1M6LyTuBIWYU=
+		</data>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_close.png</key>
+		<data>
+		1U2XC/VL4Uf0UjDVrfQmXY5r44E=
+		</data>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_maximize.png</key>
+		<data>
+		yjgxKji/xqzO7SSWHKS3+DF37rM=
+		</data>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_minimize.png</key>
+		<data>
+		KCVbcXNIJ5yFbLd8YyKBpH54ltE=
+		</data>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_unmaximize.png</key>
+		<data>
+		JDI0MPNTceGjL+6TDSt8B19xS84=
 		</data>
 		<key>flutter_assets/vm_snapshot_data</key>
 		<data>
@@ -47,7 +63,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Sps95+7JukayebvM0TLjL1LW1VXXndpKp/O8tOm9ZR8=
+			Kmrp+F2YNQbcRf4bVBMb5TQHTXE8nff86x2odSikH4s=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -61,7 +77,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OTI9rJoY1j1YGdNDN+/BS16Qm7jPZpDTkqtEdRqR/Ds=
+			v29xMhmK37YCrJQk5a4/BYkMMmfyecWztbrUSiulibI=
 			</data>
 		</dict>
 		<key>flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -82,7 +98,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			LJ+l4Xfpcs3AZ7/fIU4ZuxKVbXHFB6Iks8nttw2fs8U=
+			Ryozdwi5tN1YJFUEgOc6YsRfS7a3zaxHiGqFuHiPdM8=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -90,6 +106,34 @@
 			<key>hash2</key>
 			<data>
 			x6NX+tjyECiQtyzbbjyY8U2zoZ7GDbJtE+T+k/dzgI0=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_close.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cP4BMLu9ko0EzTOkns3kIuxU/XSLek6YP04xvm5z9fU=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_maximize.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			k/LtAS7AEoi3itSBbvJUJh6f8l6KmFg1m0VDHJpd5fQ=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_minimize.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CXbtu5l3E2VErxfeEl80WkEGVpTekgNtk2WBfqbY8Fo=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/window_manager/images/ic_chrome_unmaximize.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PTdZMMUU7C68BgOtHhOYtNr0WJUQQqlyMtFvF+HJYDs=
 			</data>
 		</dict>
 		<key>flutter_assets/vm_snapshot_data</key>

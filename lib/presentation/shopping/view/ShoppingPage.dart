@@ -129,7 +129,7 @@ class ShoppingPage extends StatelessWidget {
                     Image.network(
                       products.image,
                       width: Get.width * 0.18,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fitWidth,
                     ),
                     const SizedBox(width: 10),
                     Expanded(

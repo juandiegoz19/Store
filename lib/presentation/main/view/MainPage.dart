@@ -38,6 +38,7 @@ class MainPage extends StatelessWidget {
         title: Image.network(
           'https://s22.q4cdn.com/351912490/files/design/Logo-Falabella-Marca_.png',
           width: Get.width * 0.7,
+          height: Get.height * 0.2,
           fit: BoxFit.fitHeight,
         ),
       ),
